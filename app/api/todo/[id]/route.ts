@@ -51,8 +51,8 @@ export const PUT = async (
   }
 ) => {
   try {
-    const { title, description } = await request.json();
-    const updatedTodo = await updateTodo(params.id, title, description);
+    const { title, status } = await request.json();
+    const updatedTodo = await updateTodo(params.id, title, status);
     return NextResponse.json(updatedTodo, { status: 200 });
   } catch (error) {
     return NextResponse.json({ message: 'Something wrong!' }, { status: 404 });

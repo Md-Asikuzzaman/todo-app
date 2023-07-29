@@ -13,9 +13,9 @@ export const GET = async () => {
 
 //* CREATE NEW TODO...
 export const POST = async (request: NextRequest) => {
-  const { title, description } = await request.json();
+  const { title } = await request.json();
   try {
-    const newTodo = await createTodo(title, description);
+    const newTodo = await createTodo(title);
     return NextResponse.json(newTodo, { status: 201 });
   } catch (error) {
     return NextResponse.json({ message: 'Something wrong!' }, { status: 404 });

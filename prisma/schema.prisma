@@ -10,6 +10,6 @@ datasource db {
 model Todo {
   id          String   @id @default(auto()) @map("_id") @db.ObjectId
   title       String
-  description String
+  status      Int      @default(0)
   createdAt   DateTime @default(now())
 }
